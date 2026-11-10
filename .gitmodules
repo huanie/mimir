@@ -4,3 +4,6 @@
 [submodule "submodules/nanobind"]
 	path = submodules/nanobind
 	url = ../../wjakob/nanobind.git
+[submodule "submodules/lsp-framework"]
+	path = submodules/lsp-framework
+	url = https://github.com/leon-bckl/lsp-framework

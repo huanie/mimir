@@ -106,6 +106,7 @@ set(DOXY_INDEX_HTML "${PROJECT_BINARY_DIR}/html/index.html") # Doxyfile.in sets 
 set(DOXY_EXTRA_FILES
     mimir.md
     cli.md
+    lsp.md
     coding.md
     dev.md
     langref.md

@@ -7,7 +7,6 @@
 #include <filesystem>
 #include <iostream>
 #include <optional>
-#include <stdexcept>
 
 #include <fe/dl.h>
 #include <fe/sys.h>

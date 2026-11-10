@@ -60,6 +60,7 @@ option(MIM_DEBUG_OPTIMIZE   "If ON, compile Debug builds with -Og instead of -O0
 option(MIM_BUILD_DOCS       "If ON, build the documentation (requires Doxygen)." OFF)
 option(MIM_BUILD_EXAMPLES   "If ON, build examples." OFF)
 option(MIM_BUILD_PYTHON     "If ON, build the mim Python package from py/ into ${CMAKE_BINARY_DIR}/python." ON)
+cmake_dependent_option(MIM_BUILD_LSP "If ON, build the Mim language server." ON "NOT EMSCRIPTEN" OFF)
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}; shared libs: ${BUILD_SHARED_LIBS}")
 
@@ -120,6 +121,9 @@ endif()
 set(FE_INSTALL ON) # mim-config.cmake.in includes fe-config, so fe must install alongside mim.
 
 add_subdirectory(submodules/fe)
+if(MIM_BUILD_LSP)
+    add_subdirectory(submodules/lsp-framework EXCLUDE_FROM_ALL)
+endif()
 add_subdirectory(src)
 
 if(EMSCRIPTEN)
